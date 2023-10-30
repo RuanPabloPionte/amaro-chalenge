@@ -1,4 +1,5 @@
 interface Product {
+  id: number;
   name: string;
   style: string;
   code_color: string;

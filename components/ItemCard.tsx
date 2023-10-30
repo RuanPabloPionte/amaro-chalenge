@@ -1,3 +1,4 @@
+"use client";
 // - The app must be responsive. Use a **mobile-first** approach.
 // - For each item on the catalog, the following information must be present on the page:
 //     - Image
@@ -10,10 +11,11 @@
 // - It must be possible to add products by size to the cart.
 // - It must be possible to view the cart with the items you've added (name, image, price, quantity) and the grand total.
 // - The cart should be persisted between reloads.
-
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
 function ItemCard({
+  id,
   image,
   name,
   regular_price,
@@ -22,7 +24,9 @@ function ItemCard({
   sizes,
 }: Product) {
   //   console.log(products);
-  const hasDescount = discount_percentage && true;
+  const [sizeCode, setSizeCode] = useState(" ");
+  console.log(id);
+
   return (
     <div className="p-3 gap-3 flex justify-center align-center flex-wrap bg-slate-200 rounded-md border border-black shadow-black shadow-md">
       <Image
@@ -34,7 +38,7 @@ function ItemCard({
       />
       <div className=" text-lg lg:text-2xl font-semibold">
         <p className="text-center">{name}</p>
-        <p>
+        <div>
           {discount_percentage ? (
             <>
               <span className="line-through">{regular_price}</span>
@@ -44,19 +48,21 @@ function ItemCard({
           ) : (
             regular_price
           )}
-        </p>
+        </div>
       </div>
       <div className="flex gap-2 w-full my-2 justify-center">
         {sizes.map((size) =>
           sizes.length > 3 ? (
-            <p
+            <button
+              disabled={size.available}
               className={`border border-black p-2 rounded-md ${
                 size.available && "border-dashed"
               }`}
               key={size.sku}
+              onClick={() => setSizeCode(size.sku)}
             >
               {size.size}
-            </p>
+            </button>
           ) : null
         )}
       </div>
