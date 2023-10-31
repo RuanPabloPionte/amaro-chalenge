@@ -1,18 +1,11 @@
-"use client";
-import { useCart } from "@/context/CartContex";
-import { link } from "fs";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { HiOutlineMenu } from "react-icons/hi";
-import {
-  IoPersonOutline,
-  IoBagOutline,
-  IoSearchOutline,
-} from "react-icons/io5";
+import { IoPersonOutline, IoSearchOutline } from "react-icons/io5";
+import CartIcon from "./CartIcon";
 
 function Header() {
-  const { cart } = useCart();
   return (
     <header>
       <nav className="flex flex-wrap items-center justify-between shadow-md shadow-black p-3">
@@ -33,14 +26,7 @@ function Header() {
           <span>
             <IoPersonOutline />
           </span>
-          <Link href="/cart" className="flex items-center relative">
-            {cart.length > 0 && (
-              <span className=" bg-red-600 text-white rounded-full px-[5px] text-sm text-center absolute top-[-5px] right-[-6px]">
-                {cart.length}
-              </span>
-            )}
-            <IoBagOutline />
-          </Link>
+          <CartIcon />
         </div>
         <div className="md:order-2 order-last w-[100vw] md:w-[30vw] text-lg relative  my-3 md:m-0">
           <input
