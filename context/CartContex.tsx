@@ -10,7 +10,7 @@ import {
 type CartContextType = {
   cart: Product[];
   addProduct: (product: Product) => void;
-  removeProduct: (productId: number) => void;
+  deleteProduct: (productId: number) => void;
 };
 
 const CartContext = createContext<CartContextType>({} as CartContextType);
@@ -33,7 +33,7 @@ export const CartContextProvider = (props: { children: ReactNode }) => {
     setCart(updatedCart);
   };
 
-  const removeProduct = (productId: number) => {
+  const deleteProduct = (productId: number) => {
     const removedProduct = cart.find(
       (product) => productId === Number(product.id)
     );
@@ -47,7 +47,7 @@ export const CartContextProvider = (props: { children: ReactNode }) => {
     }
   };
   return (
-    <CartContext.Provider value={{ cart, addProduct, removeProduct }}>
+    <CartContext.Provider value={{ cart, addProduct, deleteProduct }}>
       {props.children}
     </CartContext.Provider>
   );
