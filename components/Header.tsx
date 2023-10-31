@@ -2,6 +2,7 @@
 import { useCart } from "@/context/CartContex";
 import { link } from "fs";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { HiOutlineMenu } from "react-icons/hi";
 import {
@@ -16,7 +17,7 @@ function Header() {
     <header>
       <nav className="flex flex-wrap items-center justify-between shadow-md shadow-black p-3">
         {/* image */}
-        <div className="flex gap-2 order-1">
+        <Link href={"/"} className="flex gap-2 order-1">
           <HiOutlineMenu className="md:hidden text-2xl" />
           <Image
             width={100}
@@ -25,21 +26,21 @@ function Header() {
             src="/Logotipo_da_Amaro.png"
             className="md:p-2"
           />
-        </div>
+        </Link>
 
         {/* icons */}
         <div className="flex gap-3 text-2xl md:text-3xl order-2 md:order-3">
           <span>
             <IoPersonOutline />
           </span>
-          <div className="flex items-center relative">
+          <Link href="/cart" className="flex items-center relative">
             {cart.length > 0 && (
               <span className=" bg-red-600 text-white rounded-full px-[5px] text-sm text-center absolute top-[-5px] right-[-6px]">
                 {cart.length}
               </span>
             )}
             <IoBagOutline />
-          </div>
+          </Link>
         </div>
         <div className="md:order-2 order-last w-[100vw] md:w-[30vw] text-lg relative  my-3 md:m-0">
           <input
