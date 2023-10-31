@@ -1,3 +1,6 @@
+"use client";
+import { useCart } from "@/context/CartContex";
+import { link } from "fs";
 import Image from "next/image";
 import React from "react";
 import { HiOutlineMenu } from "react-icons/hi";
@@ -8,9 +11,10 @@ import {
 } from "react-icons/io5";
 
 function Header() {
+  const { cart } = useCart();
   return (
     <header>
-      <nav className="flex flex-wrap justify-between shadow-md shadow-black p-3">
+      <nav className="flex flex-wrap items-center justify-between shadow-md shadow-black p-3">
         {/* image */}
         <div className="flex gap-2 order-1">
           <HiOutlineMenu className="md:hidden text-2xl" />
@@ -28,9 +32,14 @@ function Header() {
           <span>
             <IoPersonOutline />
           </span>
-          <span>
+          <div className="flex items-center relative">
+            {cart.length > 0 && (
+              <span className=" bg-red-600 text-white rounded-full px-[5px] text-sm text-center absolute top-[-5px] right-[-6px]">
+                {cart.length}
+              </span>
+            )}
             <IoBagOutline />
-          </span>
+          </div>
         </div>
         <div className="md:order-2 order-last w-[100vw] md:w-[30vw] text-lg relative  my-3 md:m-0">
           <input
