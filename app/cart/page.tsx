@@ -7,28 +7,25 @@ import { AiOutlineClose } from "react-icons/ai";
 
 type CartEntry = {
   product: Product;
+  chosenSize: string;
   quantity: number;
 };
 
 function Cart() {
-  const { cart, deleteProduct } = useCart();
+  const { cart, addProduct, deleteProduct } = useCart();
   const [cartList, setCartList] = useState([] as CartEntry[]);
   const [totalPrice, setTotalPrice] = useState(0);
   useEffect(() => {
-    const cartList = cart.reduce((productList, product) => {
+    const cartList = cart.reduce((productList, cart) => {
       const productIndex = productList.findIndex(
-        (entry) => entry.product.id === product.id
+        (entry) =>
+          entry.product.id === cart.product.id &&
+          entry.chosenSize === cart.chosenSize
       );
 
       // produto novo ainda não existe
       if (productIndex === -1) {
-        return [
-          ...productList,
-          {
-            product,
-            quantity: 1,
-          },
-        ];
+        return [...productList, cart];
       }
 
       // produto que já existia
@@ -38,9 +35,9 @@ function Cart() {
     setCartList(cartList);
 
     const getTotalPrice = () => {
-      const totalPrice = cart.reduce((total, price) => {
+      const totalPrice = cart.reduce((total, cart) => {
         let priceInNumber = parseFloat(
-          price.actual_price.slice(3).replace(",", ".")
+          cart.product.actual_price.slice(3).replace(",", ".")
         );
         return total + priceInNumber;
       }, 0);
@@ -81,7 +78,7 @@ function Cart() {
               <p>
                 Tam:{" "}
                 <span className="text-black/50">
-                  {cart.product.sizes[0].size}
+                  {cart.chosenSize.slice(11)}
                 </span>{" "}
               </p>
             </div>
@@ -91,8 +88,10 @@ function Cart() {
                   <CiCircleMinus />
                 </button>
                 <p>{cart.quantity}</p>
-                <button 
-                className="text-2xl text-slate-500">
+                <button
+                  onClick={() => addProduct(cart.product, cart.chosenSize)}
+                  className="text-2xl text-slate-500"
+                >
                   <CiCirclePlus />
                 </button>
               </div>

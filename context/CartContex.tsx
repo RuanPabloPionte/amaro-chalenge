@@ -8,8 +8,8 @@ import {
 } from "react";
 
 type CartContextType = {
-  cart: Product[];
-  addProduct: (product: Product) => void;
+  cart: CartEntry[];
+  addProduct: (product: Product, chosenSize: string) => void;
   deleteProduct: (productId: number) => void;
 };
 
@@ -20,7 +20,7 @@ export const CartContextProvider = (props: { children: ReactNode }) => {
     typeof window !== "undefined"
       ? JSON.parse(localStorage.getItem("amaro-cart") || "[]")
       : [];
-  const [cart, setCart] = useState<Product[]>(initialCart);
+  const [cart, setCart] = useState<CartEntry[]>(initialCart);
 
   useEffect(() => {
     // Check if localStorage is available
@@ -28,20 +28,22 @@ export const CartContextProvider = (props: { children: ReactNode }) => {
       localStorage.setItem("amaro-cart", JSON.stringify(cart));
     }
   }, [cart]);
-  const addProduct = (product: Product) => {
-    const updatedCart = [...cart, product];
+  const addProduct = (product: Product, chosenSize: string) => {
+    const updatedCart = [...cart, { product, chosenSize, quantity: 1 }];
     setCart(updatedCart);
   };
 
   const deleteProduct = (productId: number) => {
-    const removedProduct = cart.find(
-      (product) => productId === Number(product.id)
+    const removedProductCart = cart.find(
+      (cart) => productId === Number(cart.product.id)
     );
     if (
-      confirm(`Tem certeza que quer remover o itme ${removedProduct?.name}`)
+      confirm(
+        `Tem certeza que quer remover o itme ${removedProductCart?.product?.name}`
+      )
     ) {
       const updatedCart = cart.filter(
-        (product) => productId !== Number(product.id)
+        (cart) => productId !== Number(cart.product.id)
       );
       setCart(updatedCart);
     }

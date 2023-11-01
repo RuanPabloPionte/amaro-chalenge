@@ -11,7 +11,7 @@
 // - It must be possible to add products by size to the cart.
 // - It must be possible to view the cart with the items you've added (name, image, price, quantity) and the grand total.
 // - The cart should be persisted between reloads.
-import { use, useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { useCart } from "@/context/CartContex";
 import ToastCart from "./ToastCart";
@@ -56,7 +56,7 @@ function ItemCard({ product }: ItemCartProps) {
                 size.available && "border-dashed"
               }`}
               key={size.sku}
-              onClick={() => console.log(size.sku)}
+              onClick={() => setSizeCode(size.sku)}
             >
               {size.size}
             </button>
@@ -65,7 +65,7 @@ function ItemCard({ product }: ItemCartProps) {
       </div>
       <button
         onClick={() => {
-          addProduct(product);
+          addProduct(product, sizeCode);
           setOpenToast(true);
           setTimeout(() => {
             setOpenToast(false);
