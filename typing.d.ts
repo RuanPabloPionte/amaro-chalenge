@@ -12,6 +12,7 @@ interface Product {
   installments: string;
   image: string;
   sizes: Size[];
+  chosenSize: string | undefined;
 }
 
 interface Size {
@@ -19,3 +20,9 @@ interface Size {
   size: string;
   sku: string;
 }
+
+type CartEntry = {
+  product: Product;
+  chosenSize: string;
+  quantity: number;
+};
