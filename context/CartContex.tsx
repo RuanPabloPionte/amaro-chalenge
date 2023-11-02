@@ -17,8 +17,11 @@ type CartContextType = {
   cart: CartEntry[];
   addProduct: (product: Product, chosenSize: string) => void;
   deleteProduct: (productId: number) => void;
-  decreaseQuantity: (productId: number, chosenSize: string) => void;
-  increaseQuantity: (productId: number, chosenSize: string) => void;
+  updateQuantity: (
+    productId: number,
+    chosenSize: string,
+    amount: number
+  ) => void;
 };
 
 const CartContext = createContext<CartContextType>({} as CartContextType);
@@ -58,26 +61,17 @@ export const CartContextProvider = (props: { children: ReactNode }) => {
     }
   };
 
-  const decreaseQuantity = (productId: number, chosenSize: string) => {
+  const updateQuantity = (
+    productId: number,
+    chosenSize: string,
+    amount: number
+  ) => {
     const updatedCart = cart.map((cartEntry) => {
       if (
         cartEntry.product.id === productId &&
         cartEntry.chosenSize === chosenSize
       ) {
-        cartEntry.quantity--;
-      }
-      return cartEntry;
-    });
-    setCart(updatedCart);
-  };
-
-  const increaseQuantity = (productId: number, chosenSize: string) => {
-    const updatedCart = cart.map((cartEntry) => {
-      if (
-        cartEntry.product.id === productId &&
-        cartEntry.chosenSize === chosenSize
-      ) {
-        cartEntry.quantity++;
+        cartEntry.quantity += amount;
       }
       return cartEntry;
     });
@@ -90,8 +84,7 @@ export const CartContextProvider = (props: { children: ReactNode }) => {
         cart,
         addProduct,
         deleteProduct,
-        decreaseQuantity,
-        increaseQuantity,
+        updateQuantity,
       }}
     >
       {props.children}
