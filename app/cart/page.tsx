@@ -2,6 +2,8 @@
 import { useEffect, useState } from "react";
 import { useCart } from "@/context/CartContex";
 import CartContent from "@/components/CartContent";
+import CartHeader from "@/components/CartHeader";
+import CartFooter from "@/components/CartFooter";
 
 function Cart() {
   const { cart } = useCart();
@@ -40,13 +42,21 @@ function Cart() {
   }, [cart]);
   // console.log(cartList);
   return (
-    <section className="bg-slate-200 min-h-screen ">
-      {cartList.map((cartEntry) => {
-        return <CartContent key={cartEntry.product.id} cartEntry={cartEntry} />;
-      })}
-      <p>quantidade de produtos: {cart.length}</p>
-      <p>Total: {totalPrice}</p>
-    </section>
+    <main className="bg-slate-200 min-h-screen  ">
+      <CartHeader />
+      <section className="grid grid-cols-1 md:grid-cols-3 md:m-4">
+        <section className="mx-3 col-span-2 md:mx-0">
+          {cartList.map((cartEntry) => {
+            return (
+              <CartContent key={cartEntry.product.id} cartEntry={cartEntry} />
+            );
+          })}
+        </section>
+        <section className="bg-white max-h-[60vh] my-2 px-3 py-2 grid gap-2">
+          <CartFooter totalPrice={totalPrice.toFixed(2)} />
+        </section>
+      </section>
+    </main>
   );
 }
 
