@@ -1,6 +1,7 @@
 "use client";
 import ItemCard from "@/components/ItemCard";
 import { useProductContext } from "@/context/ProductsContext";
+import Header from "@/components/Header";
 
 export default function Home() {
   const { products } = useProductContext();
@@ -8,6 +9,8 @@ export default function Home() {
   // console.log(products[0]);
   return (
     <main>
+      <Header />
+
       <section className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4  m-5 gap-2 lg:gap-4">
         {products.map((product, index) => (
           <ItemCard key={index} product={product} />
