@@ -12,7 +12,7 @@ interface Product {
   installments: string;
   image: string;
   sizes: Size[];
-  chosenSize: string | undefined;
+  chosenSize?: string | undefined;
 }
 
 interface Size {
