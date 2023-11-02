@@ -1,16 +1,4 @@
 "use client";
-// - The app must be responsive. Use a **mobile-first** approach.
-// - For each item on the catalog, the following information must be present on the page:
-//     - Image
-//     - Name
-//     - Price
-//     - Promo Status
-//     - Promo price (if available)
-//     - Available Sizes
-//     - Sale badge
-// - It must be possible to add products by size to the cart.
-// - It must be possible to view the cart with the items you've added (name, image, price, quantity) and the grand total.
-// - The cart should be persisted between reloads.
 import { useState } from "react";
 import Image from "next/image";
 import { useCart } from "@/context/CartContex";
@@ -22,7 +10,7 @@ type ItemCartProps = {
 
 function ItemCard({ product }: ItemCartProps) {
   const [openToast, setOpenToast] = useState(false);
-  const [sizeCode, setSizeCode] = useState(" ");
+  const [sizeCode, setSizeCode] = useState("");
   const { addProduct } = useCart();
   return (
     <div className="p-3 gap-3 flex justify-center align-center flex-wrap bg-slate-200 rounded-md border border-black shadow-black shadow-md">
@@ -52,11 +40,15 @@ function ItemCard({ product }: ItemCartProps) {
           product.sizes.length > 3 ? (
             <button
               disabled={size.available}
-              className={`border border-black p-2 rounded-md ${
-                size.available && "border-dashed"
-              }`}
+              className={`border border-black p-2 rounded-md 
+              ${size.available && "border-dashed"}
+              ${sizeCode === size.sku ? "bg-green-300" : ""}
+              `}
               key={size.sku}
-              onClick={() => setSizeCode(size.sku)}
+              onClick={() => {
+                // verificar se ele já clicou ou não no botão
+                sizeCode === size.sku ? setSizeCode("") : setSizeCode(size.sku);
+              }}
             >
               {size.size}
             </button>
@@ -65,15 +57,21 @@ function ItemCard({ product }: ItemCartProps) {
       </div>
       <button
         onClick={() => {
-          addProduct(product, sizeCode);
-          setOpenToast(true);
-          setTimeout(() => {
-            setOpenToast(false);
-          }, 2 * 1000);
+          if (sizeCode !== "") {
+            addProduct(product, sizeCode);
+            setOpenToast(true);
+            setTimeout(() => {
+              setOpenToast(false);
+            }, 2 * 1000);
+
+            setSizeCode("");
+          } else {
+            alert("Por favor selecione um tamanho");
+          }
         }}
         className="border border-black rounded-md p-3 bg-slate-300 hover:bg-emerald-300 transition-all duration-[0.7s] shadow-md shadow-sky-400"
       >
-        Add to Cart
+        Comprar
       </button>
 
       {openToast && <ToastCart />}
