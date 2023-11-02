@@ -1,9 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { HiOutlineMenu } from "react-icons/hi";
 import { IoPersonOutline, IoSearchOutline } from "react-icons/io5";
 import CartIcon from "./CartIcon";
+import AmaroLogo from "./AmaroLogo";
 
 function Header() {
   return (
@@ -12,13 +12,7 @@ function Header() {
         {/* image */}
         <Link href={"/"} className="flex gap-2 order-1">
           <HiOutlineMenu className="md:hidden text-2xl" />
-          <Image
-            width={100}
-            height={40}
-            alt="amaro-logo"
-            src="/Logotipo_da_Amaro.png"
-            className="md:p-2"
-          />
+          <AmaroLogo />
         </Link>
 
         {/* icons */}
