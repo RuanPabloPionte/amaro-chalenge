@@ -4,6 +4,7 @@ import { HiOutlineMenu } from "react-icons/hi";
 import { IoPersonOutline, IoSearchOutline } from "react-icons/io5";
 import CartIcon from "./CartIcon";
 import AmaroLogo from "./AmaroLogo";
+import HeaderSearch from "./HeaderSearch";
 
 function Header() {
   return (
@@ -22,14 +23,7 @@ function Header() {
           </span>
           <CartIcon />
         </div>
-        <div className="md:order-2 order-last w-[100vw] md:w-[30vw] text-lg relative  my-3 md:m-0">
-          <input
-            className=" bg-slate-100  p-2 w-full border  border-black rounded-md"
-            type="text"
-            placeholder="O que você está procurando?"
-          />
-          <IoSearchOutline className="absolute top-3 right-2 text-2xl" />
-        </div>
+        <HeaderSearch />
       </nav>
     </header>
   );

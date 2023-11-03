@@ -6,14 +6,23 @@ import ToastCart from "./ToastCart";
 
 type ItemCartProps = {
   product: Product;
+  query?: string;
 };
 
-function ItemCard({ product }: ItemCartProps) {
+function ItemCard({ product, query }: ItemCartProps) {
   const [openToast, setOpenToast] = useState(false);
   const [sizeCode, setSizeCode] = useState("");
   const { addProduct } = useCart();
+
+  const formatedQuerry = query?.toUpperCase().trim();
+  const shouldRenderItem =
+    !formatedQuerry || product.name.toUpperCase().includes(formatedQuerry);
+
+  if (!shouldRenderItem) {
+    return null;
+  }
   return (
-    <div className="p-3 gap-3 flex justify-center align-center flex-wrap bg-slate-200 rounded-md border border-black shadow-black shadow-md">
+    <div className="p-5 gap-3 flex justify-center align-center flex-wrap bg-slate-200 rounded-md border border-black shadow-black shadow-md">
       <Image
         src={product.image}
         width={300}

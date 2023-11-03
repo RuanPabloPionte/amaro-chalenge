@@ -41,7 +41,7 @@ function CartContent({ cartEntry }: CartContentProps) {
             <p>
               Tam:{" "}
               <span className="text-black/50">
-                {cartEntry.chosenSize.slice(-2)}
+                {cartEntry.chosenSize.slice(-2).replace("_", "")}
               </span>{" "}
             </p>
           </div>
@@ -57,7 +57,7 @@ function CartContent({ cartEntry }: CartContentProps) {
               </button>
               <p>{cartEntry.quantity}</p>
               <button
-                // não da para usar o addProduct aqui pq vai causar um problema quando vc da refresh, ele mais add outro produto sempre que sua paguna rerenderizar
+                // não da para usar o addProduct aqui pq vai causar um problema quando vc da refresh, ele add mais  outro produto sempre que sua paguna rerenderizar
                 // comentario so para mim , apagar dps
                 // my theory is  the following, cause the useEffect uses the cart state as dependence when the we use the addProduct a remont is triggered, but the product that we add persist in the state which when cause a another remont the product still there and is add into the cartlist again and this process repeat itself.
                 onClick={() => {
