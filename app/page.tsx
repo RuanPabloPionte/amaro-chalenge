@@ -1,6 +1,5 @@
-"use client";
 import ItemCard from "@/components/ItemCard";
-import { useProductContext } from "@/context/ProductsContext";
+import products from "@/products.json";
 import Header from "@/components/Header";
 
 export default function Home({
@@ -10,10 +9,8 @@ export default function Home({
     query?: string;
   };
 }) {
-  const { products } = useProductContext();
   const query = searchParams?.query || "";
 
-  // console.log(products[0]);
   return (
     <main>
       <Header />

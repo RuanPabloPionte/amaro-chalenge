@@ -72,10 +72,16 @@ export const CartContextProvider = (props: { children: ReactNode }) => {
         cartEntry.chosenSize === chosenSize
       ) {
         cartEntry.quantity += amount;
+        cartEntry.quantity <= 0 && deleteProduct(productId);
       }
       return cartEntry;
     });
-    setCart(updatedCart);
+
+    const cartAfterUpdate = updatedCart.filter(
+      (cartEntry) => cartEntry.quantity > 0
+    );
+
+    setCart(cartAfterUpdate);
   };
 
   return (
