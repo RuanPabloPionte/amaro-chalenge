@@ -52,7 +52,7 @@ function Cart() {
             );
           })}
         </section>
-        <section className="bg-white max-h-[60vh] w-full my-2 md:m-2 px-3 p-2 grid gap-2 absolute bottom-0 md:static">
+        <section className="bg-white max-h-[60vh] w-full my-2 md:m-2 px-3 p-2 grid gap-2  md:static">
           <CartFooter totalPrice={totalPrice.toFixed(2)} />
         </section>
       </section>
