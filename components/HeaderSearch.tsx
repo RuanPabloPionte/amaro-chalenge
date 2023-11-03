@@ -1,19 +1,19 @@
 "use client";
-import { useState } from "react";
 import { IoSearchOutline } from "react-icons/io5";
-import { useProductContext } from "@/context/ProductsContext";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
+import { useDebouncedCallback } from "use-debounce";
 
 function HeaderSearch() {
   const searchParams = useSearchParams();
   const pathName = usePathname();
   const { replace } = useRouter();
 
-  const handleSearch = (term: string) => {
+  const handleSearch = useDebouncedCallback((term: string) => {
+    console.log(term);
     const params = new URLSearchParams(searchParams);
     term ? params.set("query", term) : params.delete("query");
     replace(`${pathName}?${params.toString()}`);
-  };
+  }, 300);
 
   return (
     <div className="md:order-2 order-last w-[100vw] md:w-[30vw] text-lg relative  my-3 md:m-0">
