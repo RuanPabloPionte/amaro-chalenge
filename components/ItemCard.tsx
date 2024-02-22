@@ -21,10 +21,12 @@ function ItemCard({ product, query }: ItemCartProps) {
   if (!shouldRenderItem) {
     return null;
   }
+
   return (
     <div className="p-5 gap-3 flex justify-center align-center flex-wrap bg-slate-200 rounded-md border border-black shadow-black shadow-md">
       <Image
-        src={product.image}
+        // não consigo mais acessar essa imagem quando dou o deploy não tenho mais autorização, só consigo acessar localmente.
+        src={`${product.image}`}
         width={300}
         height={500}
         alt={product.name}
