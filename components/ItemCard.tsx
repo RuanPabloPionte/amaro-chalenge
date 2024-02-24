@@ -22,6 +22,7 @@ function ItemCard({ product, query }: ItemCartProps) {
     return null;
   }
 
+  console.log(product.image);
   return (
     <div className="p-5 gap-3 flex justify-center align-center flex-wrap bg-slate-200 rounded-md border border-black shadow-black shadow-md">
       <Image

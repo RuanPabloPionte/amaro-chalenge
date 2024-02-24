@@ -11,7 +11,7 @@
     "actual_price": "R$ 199,90",
     "discount_percentage": "",
     "installments": "3x R$ 66,63",
-    "image": "https://d3l7rqep7l31az.cloudfront.net/images/products/20002605_615_catalog_1.jpg?1460136912",
+    "image": "/vestidoT.png",
     "sizes": [
       {
         "available": false,
@@ -52,7 +52,7 @@
     "actual_price": "R$ 99,90",
     "discount_percentage": "",
     "installments": "3x R$ 33,30",
-    "image": "https://d3l7rqep7l31az.cloudfront.net/images/products/20002570_002_catalog_1.jpg?1459948578",
+    "image": "/REGATA_ALCINHA_FOLK.webp",
     "sizes": [
       {
         "available": true,
@@ -93,7 +93,7 @@
     "actual_price": "R$ 129,90",
     "discount_percentage": "",
     "installments": "3x R$ 43,30",
-    "image": "https://d3l7rqep7l31az.cloudfront.net/images/products/20002575_027_catalog_1.jpg?1459537946",
+    "image": "/TOP_CROPPED_SUEDE.webp",
     "sizes": [
       {
         "available": false,
@@ -134,7 +134,7 @@
     "actual_price": "R$ 149,90",
     "discount_percentage": "",
     "installments": "3x R$ 49,97",
-    "image": "https://d3l7rqep7l31az.cloudfront.net/images/products/20002581_614_catalog_1.jpg?1459536611",
+    "image": "/BATA_DECOTE_FLUID.webp",
     "sizes": [
       {
         "available": false,
@@ -175,7 +175,7 @@
     "actual_price": "R$ 189,90",
     "discount_percentage": "",
     "installments": "3x R$ 63,30",
-    "image": "https://d3l7rqep7l31az.cloudfront.net/images/products/20002584_035_catalog_1.jpg?1459947139",
+    "image": "/CAMISA_SUEDE_SPAN.webp",
     "sizes": [
       {
         "available": false,
@@ -216,7 +216,7 @@
     "actual_price": "R$ 159,90",
     "discount_percentage": "",
     "installments": "3x R$ 53,30",
-    "image": "https://d3l7rqep7l31az.cloudfront.net/images/products/20002634_613_catalog_1.jpg?1459548109",
+    "image": "/CALÇA_CLASSIC_PRINT.webp",
     "sizes": [
       {
         "available": true,
@@ -257,7 +257,7 @@
     "actual_price": "R$ 99,90",
     "discount_percentage": "",
     "installments": "3x R$ 33,30",
-    "image": "https://d3l7rqep7l31az.cloudfront.net/images/products/20002570_029_catalog_1.jpg?1459948578",
+    "image": "/REGATA_ALCINHA_FOLK_WHITE.webp",
     "sizes": [
       {
         "available": true,
@@ -298,7 +298,7 @@
     "actual_price": "R$ 149,90",
     "discount_percentage": "",
     "installments": "3x R$ 49,97",
-    "image": "https://d3l7rqep7l31az.cloudfront.net/images/products/20002612_612_catalog_1.jpg?1459531023",
+    "image": "/MACAQUINHO_ALFAIATARIA_PEACE.webp",
     "sizes": [
       {
         "available": false,
@@ -339,7 +339,7 @@
     "actual_price": "R$ 159,90",
     "discount_percentage": "25%",
     "installments": "3x R$ 53,30",
-    "image": "https://d3l7rqep7l31az.cloudfront.net/images/products/20002945_027_catalog_1.jpg?1459540966",
+    "image": "/BOLSA_FLAP_TRIANGLE.webp",
     "sizes": [
       {
         "available": true,
@@ -360,7 +360,7 @@
     "actual_price": "R$ 219,90",
     "discount_percentage": "",
     "installments": "3x R$ 73,30",
-    "image": "https://d3l7rqep7l31az.cloudfront.net/images/products/20002606_615_catalog_1.jpg?1459515279",
+    "image": "/VESTIDO_LONGO_FLOAT.webp",
     "sizes": [
       {
         "available": true,
@@ -401,7 +401,7 @@
     "actual_price": "R$ 149,90",
     "discount_percentage": "",
     "installments": "3x R$ 49,97",
-    "image": "https://d3l7rqep7l31az.cloudfront.net/images/products/20002581_611_catalog_1.jpg?1459536611",
+    "image": "/BATA_DECOTE_FLUID_bohemian_preto.webp",
     "sizes": [
       {
         "available": false,
@@ -442,7 +442,7 @@
     "actual_price": "R$ 69,90",
     "discount_percentage": "50%",
     "installments": "2x R$ 34,95",
-    "image": "https://d3l7rqep7l31az.cloudfront.net/images/products/20001609_002_catalog_1.jpg?",
+    "image": "/VESTIDO_FRANZIDO_RECORTES.webp",
     "sizes": [
       {
         "available": true,
@@ -483,7 +483,7 @@
     "actual_price": "R$ 84,90",
     "discount_percentage": "39%",
     "installments": "2x R$ 42,45",
-    "image": "https://d3l7rqep7l31az.cloudfront.net/images/products/20001786_594_catalog_1.jpg?1449159646",
+    "image": "/CALÇA_COMFORT_TASSEL.webp",
     "sizes": [
       {
         "available": true,
@@ -524,7 +524,7 @@
     "actual_price": "R$ 69,90",
     "discount_percentage": "50%",
     "installments": "2x R$ 34,95",
-    "image": "https://d3l7rqep7l31az.cloudfront.net/images/products/20001695_063_catalog_1.jpg?",
+    "image": "/SAIA_DENIM_BOTÕES.webp",
     "sizes": [
       {
         "available": false,
@@ -565,7 +565,7 @@
     "actual_price": "R$ 149,90",
     "discount_percentage": "",
     "installments": "3x R$ 49,97",
-    "image": "https://d3l7rqep7l31az.cloudfront.net/images/products/20002600_293_catalog_1.jpg?1460416037",
+    "image": "/BLUSA_LAÇO_ISTAMBUL.webp",
     "sizes": [
       {
         "available": true,
@@ -606,7 +606,7 @@
     "actual_price": "R$ 149,90",
     "discount_percentage": "",
     "installments": "3x R$ 49,97",
-    "image": "https://d3l7rqep7l31az.cloudfront.net/images/products/20002829_006_catalog_1.jpg?1459550820",
+    "image": "/BLUSA_RIB_STRIPES.webp",
     "sizes": [
       {
         "available": false,
@@ -647,7 +647,7 @@
     "actual_price": "R$ 239,90",
     "discount_percentage": "",
     "installments": "3x R$ 79,97",
-    "image": "https://d3l7rqep7l31az.cloudfront.net/images/products/20002648_029_catalog_1.jpg?1459552552",
+    "image": "/CASACO_WHITE_FUR.webp",
     "sizes": [
       {
         "available": false,
@@ -688,7 +688,7 @@
     "actual_price": "R$ 59,90",
     "discount_percentage": "54%",
     "installments": "1x R$ 59,90",
-    "image": "https://d3l7rqep7l31az.cloudfront.net/images/products/20001684_585_catalog_1.jpg?",
+    "image": "/VESTIDO_CURTO_FESTIVAL.webp",
     "sizes": [
       {
         "available": false,
@@ -729,7 +729,7 @@
     "actual_price": "R$ 49,90",
     "discount_percentage": "55%",
     "installments": "1x R$ 49,90",
-    "image": "https://d3l7rqep7l31az.cloudfront.net/images/products/20001882_008_catalog_1.jpg?",
+    "image": "/OCULOS_DE_SOL_BOLD.webp",
     "sizes": [
       {
         "available": true,
@@ -750,7 +750,7 @@
     "actual_price": "R$ 49,90",
     "discount_percentage": "55%",
     "installments": "1x R$ 49,90",
-    "image": "https://d3l7rqep7l31az.cloudfront.net/images/products/20001883_019_catalog_1.jpg?",
+    "image": "/OCULOS_DE_SOL_AVIADOR_VINTAGE.webp",
     "sizes": [
       {
         "available": true,
@@ -771,7 +771,7 @@
     "actual_price": "R$ 29,90",
     "discount_percentage": "",
     "installments": "1x R$ 29,90",
-    "image": "https://d3l7rqep7l31az.cloudfront.net/images/products/20001913_009_catalog_1.jpg?",
+    "image": "/PULSEIRA_STYLISH.webp",
     "sizes": [
       {
         "available": true,
